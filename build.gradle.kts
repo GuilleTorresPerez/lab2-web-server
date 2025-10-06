@@ -25,6 +25,7 @@ dependencies {
     implementation(libs.jackson.module.kotlin)
 
     testImplementation(libs.spring.boot.starter.test)
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<Test> {
