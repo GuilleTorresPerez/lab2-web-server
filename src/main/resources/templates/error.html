@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="|Error ${status} — ${error}|">Error</title>
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; background:#0b1220; color:#e6e9ef; }
+        main { max-width: 720px; margin: 8vh auto; padding: 24px; background: #111a2e; border-radius: 16px; }
+        h1 { margin: 0 0 8px; font-size: 1.8rem; }
+        p  { margin: 0 0 8px; color:#c7cfdd; }
+        code { background:#0e1626; padding:2px 6px; border-radius:6px; }
+        a { color:#8fb3ff; text-decoration:none; }
+        .muted { color:#9aa3b2; font-size: .9rem; }
+    </style>
+    <!-- Signature for tests -->
+    <meta name="x-error-template" content="custom-error-v1">
+</head>
+<body>
+<main>
+    <h1><span th:text="${status}">404</span> · <span th:text="${error}">Not Found</span></h1>
+    <p>Path: <code th:text="${path}">/unknown</code></p>
+    <p th:if="${message}">Message: <span th:text="${message}">N/A</span></p>
+    <p class="muted">Time: <span th:text="${timestamp}">timestamp</span></p>
+    <p><a href="/">Back to home</a></p>
+</main>
+</body>
+</html>
